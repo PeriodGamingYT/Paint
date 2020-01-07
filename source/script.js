@@ -89,6 +89,10 @@ function draw() {
 document.addEventListener("keydown", function(e) {
 	if(e.keyCode == 17) {
 		makeCircle(20, 20);
+		if(mouse.x > 20 && mouse.y > 20 && mouse.y < 120 && mouse.x < 120) {
+      	  	  	var mouseData = canvas.getImageData(mouse.x, mouse.y, 1, 1);
+      	  	  	document.getElementById("color").value = rgb2hex(mouseData.data[0], mouseData.data[1], mouseData.data[2]);
+      		}
 	}
 });
 
