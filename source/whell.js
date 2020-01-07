@@ -24,4 +24,5 @@ function makeWheel(x, y) {
       data[index+3] = 255;
     }
   }
+  canvas.putImageData(image, x, y);
 }
