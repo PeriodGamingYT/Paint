@@ -88,7 +88,7 @@ function draw() {
 
 document.addEventListener("keydown", function(e) {
 	if(e.keyCode == 17) {
-		document.getElementById("color").click();
+		makeCircle(20, 20);
 	}
 });
 
