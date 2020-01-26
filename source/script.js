@@ -75,13 +75,17 @@ document.getElementById("canvas").onwheel = function() {
 function draw() {
 	var offsetX = 0;
 	var offsetY = 0;
+	var sizeY = 0;
+	var sizeX = 0;
 	var canvas = document.getElementById("canvas").getContext("2d");
 	for(var y = 0; y < size.y; y++) {
 		for(var x = 0; x < size.x; x++) {
 			offsetX = mouse.scroll.x + x;
 			offsetY = mouse.scroll.y + y;
+			sizeX = Math.round(window.innerWidth/size.x);
+			sizeY = Math.round(window.innerHeight/size.y);
 			canvas.fillStyle = picture[(offsetY * size.x) + offsetX];
-			canvas.fillRect(x * (window.innerWidth/size.x), y * (window.innerHeight/size.y), window.innerWidth/size.x, window.innerHeight/size.y);
+			canvas.fillRect(x * (sizeX), y * (sizeY), sizeX, sizeY);
 		}
 	}
 }
