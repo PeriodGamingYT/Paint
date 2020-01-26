@@ -82,7 +82,7 @@ function draw() {
 		for(var x = 0; x < size.x; x++) {
 			offsetX = mouse.scroll.x + x;
 			offsetY = mouse.scroll.y + y;
-			if(picture[(offsetY * size.y) + offsetX] != "#FFFFFF" && offsetX < size.x && offsetY < size.y) {
+			if(picture[(offsetY * size.y) + offsetX] != "#FFFFFF") {
 				sizeX = Math.round(window.innerWidth/size.x);
 				sizeY = Math.round(window.innerHeight/size.y);
 				canvas.fillStyle = picture[(offsetY * size.x) + offsetX];
