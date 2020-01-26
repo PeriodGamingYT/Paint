@@ -76,12 +76,12 @@ function draw() {
 	var offsetX = 0;
 	var offsetY = 0;
 	var canvas = document.getElementById("canvas").getContext("2d");
-	for(var y = 0; y < window.innerHeight; y++) {
-		for(var x = 0; x < window.innerWidth; x++) {
+	for(var y = 0; y < size.y; y++) {
+		for(var x = 0; x < size.x; x++) {
 			offsetX = mouse.scroll.x + x;
 			offsetY = mouse.scroll.y + y;
 			canvas.fillStyle = picture[(offsetY * size.x) + offsetX];
-			canvas.fillRect(x+1, y+1, 1, 1);
+			canvas.fillRect(x * (window.innerWidth/size.x), y * (window.innerHeight/size.y), window.innerWidth/size.x, window.innerHeight/size.y);
 		}
 	}
 }
