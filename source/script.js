@@ -84,8 +84,13 @@ function draw() {
 			offsetY = mouse.scroll.y + y;
 			sizeX = Math.round(window.innerWidth/size.x);
 			sizeY = Math.round(window.innerHeight/size.y);
-			canvas.fillStyle = picture[(offsetY * size.x) + offsetX];
-			canvas.fillRect(x * (sizeX), y * (sizeY), sizeX, sizeY);
+			if(picture[(offsetY * size.y)] != "#FFFFFF" && offsetX < size.x && offsetY < size.y) {
+				canvas.fillStyle = picture[(offsetY * size.x) + offsetX];
+				canvas.fillRect(x * (sizeX), y * (sizeY), sizeX, sizeY);
+			} else {
+				canvas.fillStyle = "gray";
+				canvas.fillRect(x * (sizeX), y * (sizeY), sizeX, sizeY);
+			}
 		}
 	}
 }
