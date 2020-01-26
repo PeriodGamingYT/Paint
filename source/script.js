@@ -70,6 +70,18 @@ document.getElementById("canvas").onwheel = function() {
 	event.preventDefault();
 	mouse.scroll.x += Math.round(event.deltaX * 0.1);
 	mouse.scroll.y += Math.round(event.deltaY * 0.1);
+	if(mouse.scroll.x < 0) {
+  		mouse.scroll.x = 0;
+	}
+	if(mouse.scroll.x > size.x) {
+  		mouse.scroll.x = size.x;
+	}
+	if(mouse.scroll.y < 0) {
+  		mouse.scroll.y = 0;
+	}
+	if(mouse.scroll.y > size.y) {
+  		mouse.scroll.y = size.y;
+	}
 }
 
 function draw() {
